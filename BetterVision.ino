@@ -9,20 +9,19 @@ Links-Mitte
 Rechts-Mitte
 Links-Rechts
 */
-const int ep1 = 2; //Echo Sensor 1
-const int ep2 = 3; //Echo Sensor 2
-const int ep3 = 4; //Echo Sensor 3
-const int tp1 = 5; //Trigger Sensor 1
-const int tp2 = 6; //Trigger Sensor 2
-const int tp3 = 7; //Trigger Sensor 3
+const int ep1 = 2; //Echo Sensor 1 (links)
+const int ep2 = 3; //Echo Sensor 2 (mitte)
+const int ep3 = 4; //Echo Sensor 3 (rechts)
+const int tp1 = 5; //Trigger Sensor 1 (links)
+const int tp2 = 6; //Trigger Sensor 2 (mitte)
+const int tp3 = 7; //Trigger Sensor 3 (rechts)
 
 const int bl = 8; // Buzzer links
 const int br = 9; // Buzzer rechts
-const int bm = 13; // beide Buzzer
 
-int tonA = NOTE_G5;
-int tonB = NOTE_C5;
-int tonC = NOTE_A5;
+int tonG5 = NOTE_G5; //Соль
+int tonC5 = NOTE_C5; //До
+int tonA5 = NOTE_A5; //Ля
 
 double duration1;
 double duration2;
@@ -46,6 +45,7 @@ void setup() {
 }
 
 void loop() {
+  //Linker US-Sensor misst Distanz und wertet sie aus
   digitalWrite(tp1, LOW);
   delayMicroseconds(2);
   digitalWrite(tp1, HIGH);
@@ -56,7 +56,7 @@ void loop() {
   /*Serial.print("Distance 1: ");
   Serial.println(distance1);*/
 
-
+  //Mittlerer US-Sensor misst Distanz und wertet sie aus
   digitalWrite(tp2, LOW);
   delayMicroseconds(2);
   digitalWrite(tp2, HIGH);
@@ -68,7 +68,7 @@ void loop() {
   Serial.println(distance2);*/
 
 
-
+  //Rechter US-Sensor misst Distanz und wertet sie aus
   digitalWrite(tp3, LOW);
   delayMicroseconds(2);
   digitalWrite(tp3, HIGH);
@@ -82,17 +82,17 @@ void loop() {
   delay(500);
 
   if(distance2 <= 50){
-    tone(bl, tonC, 50);
+    tone(bl, tonA5, 50);
     delay(20);
-    tone(br, tonC, 50); //A5
+    tone(br, tonA5, 50); //A5
     Serial.print("Mitte \n");
   }
   else if (distance3 <= 50){
-    tone(br, tonB, 50); //C5
+    tone(br, TonC5, 50); //C5
     Serial.print("Rechts \n");
   }
   else if (distance1 <= 50){
-    tone(bl, tonA, 50); //G5
+    tone(bl, tonG5, 50); //G5
     Serial.print(" Links \n");
   }
   else {    
