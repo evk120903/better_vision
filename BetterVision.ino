@@ -84,7 +84,6 @@ void loop() {
   /*Serial.print("di 3: ");
   Serial.println(di3);*/
 
-  delay(50);
 
   /*
   Abfolge:
@@ -100,7 +99,7 @@ void loop() {
   if (di1 <= 15 && di2 <= 15 && di3 <= 15) {
 	tone(buz, tonA5, 70); //Tonausgabe
   Serial.print("Alle 3 30 cm \n");
-  delay(10);
+  //delay(10);
   }
   else if (di1 <= 15 && di3 <= 15){
     tone(buz, tonD5, 70); //Tonausgabe
@@ -109,27 +108,27 @@ void loop() {
   else if (di2 <= 15 && di3 <= 15){
     tone(buz, tonE5, 70); //Tonausgabe
     Serial.print("mi re 30cm \n");
-    delay(10);
+    //delay(10);
   }
   else if (di1 <= 15 && di2 <= 15){
     tone(buz, tonF5, 70); //Tonausgabe
     Serial.print("li mi 30cm \n");
-    delay(10);
+    //delay(10);
   }
   else if (di1 <= 15){
     tone(buz, tonC5, 70); //Tonausgabe
     Serial.print("li 30cm \n");
-    delay(10);
+    //delay(10);
   }
   else if (di2 <= 15){
     tone(buz, tonG5, 70); //Tonausgabe
     Serial.print("mi 30cm \n");
-    delay(10);
+    //delay(10);
   }
   else if (di3 <= 15){
     tone(buz, tonB5, 70); //Tonausgabe
     Serial.print("re 30cm \n");
-    delay(10);
+    //delay(10);
   }
   else if (di1 <= 50 && di2 <= 50 && di3 <= 50) {
 	tone(buz, tonA5, 70); //Tonausgabe
@@ -166,40 +165,40 @@ void loop() {
     Serial.print("re 30cm \n");
     delay(200);
   }
-  else if (di1 <=75 && di2 <= 75 && di3 <= 75) {
+  else if (di1 <=150 && di2 <= 150 && di3 <= 150) {
     tone(buz, tonA5, 70); //Tonausgabe
     Serial.print("Alle 3 1m \n");
-    delay(700);
+    delay(450);
   }
-  else if (di1 <= 75 && di3 <= 75){
+  else if (di1 <= 150 && di3 <= 150){
     tone(buz, tonD5, 70); //Tonausgabe
     Serial.print("li re 1m \n");
-    delay(700);
+    delay(450);
   }
-  else if (di2 <= 75 && di3 <= 75){
+  else if (di2 <= 150 && di3 <= 150){
     tone(buz, tonE5, 70); //Tonausgabe
     Serial.print("mi re 1m \n");
-    delay(700);
+    delay(450);
   }
-  else if (di1 <= 75 && di2 <= 75){
+  else if (di1 <= 150 && di2 <= 150){
     tone(buz, tonF5, 70); //Tonausgabe
     Serial.print("li mi 1m \n");
-    delay(700);
+    delay(450);
   }
-  else if (di1 <= 75){
+  else if (di1 <= 150){
     tone(buz, tonC5, 70); //Tonausgabe
     Serial.print("li 1m \n");
-    delay(700);
+    delay(450);
   }
-  else if (di2 <= 100){
+  else if (di2 <= 150){
     tone(buz, tonG5, 70); //Tonausgabe
     Serial.print("mi 1m \n");
-    delay(700);
+    delay(450);
   }
-  else if (di3 <= 100){
+  else if (di3 <= 150){
     tone(buz, tonB5, 70); //Tonausgabe
     Serial.print("re 1m \n");
-    delay(700);
+    delay(450);
   }
   else {
   }
