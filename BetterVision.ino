@@ -9,6 +9,8 @@ const int tp3 = 7; //Trigger Sensor 3 (rechts)
 
 const int buz = 9; // Buzzer
 
+
+//Konstanten für die versch. Frequenztöne, imporiert aus pitches.h
 int tonC5 = NOTE_C5;
 int tonD5 = NOTE_D5;
 int tonE5 = NOTE_E5;
@@ -29,6 +31,7 @@ double duration1;
 double duration2;
 double duration3;
 
+//gemessene Entfernung
 double di1;
 double di2;
 double di3;
@@ -81,63 +84,122 @@ void loop() {
   /*Serial.print("di 3: ");
   Serial.println(di3);*/
 
-  delay(200);
+  delay(50);
 
-  if (di1 <= 30 && di2 <= 30 && di3 <= 30) {
-	tone(buz, tonA5, 70);
+  /*
+  Abfolge:
+  Alle Drei
+  Links-Rechts
+  Mitte-Rechts
+  Links-Mitte
+  Links
+  Mitte
+  Rechts
+  (Zuerst auf 30 cm geprüft, dann auf 75 cm)*/
+
+  if (di1 <= 15 && di2 <= 15 && di3 <= 15) {
+	tone(buz, tonA5, 70); //Tonausgabe
   Serial.print("Alle 3 30 cm \n");
+  delay(10);
   }
-  else if (di1 <= 30 && di3 <= 30){
-    tone(buz, tonD5, 70);
+  else if (di1 <= 15 && di3 <= 15){
+    tone(buz, tonD5, 70); //Tonausgabe
     Serial.print("li re 30 cm \n");
   }
-  else if (di2 <= 30 && di3 <= 30){
-    tone(buz, tonE5, 70);
+  else if (di2 <= 15 && di3 <= 15){
+    tone(buz, tonE5, 70); //Tonausgabe
     Serial.print("mi re 30cm \n");
+    delay(10);
+  }
+  else if (di1 <= 15 && di2 <= 15){
+    tone(buz, tonF5, 70); //Tonausgabe
+    Serial.print("li mi 30cm \n");
+    delay(10);
+  }
+  else if (di1 <= 15){
+    tone(buz, tonC5, 70); //Tonausgabe
+    Serial.print("li 30cm \n");
+    delay(10);
+  }
+  else if (di2 <= 15){
+    tone(buz, tonG5, 70); //Tonausgabe
+    Serial.print("mi 30cm \n");
+    delay(10);
+  }
+  else if (di3 <= 15){
+    tone(buz, tonB5, 70); //Tonausgabe
+    Serial.print("re 30cm \n");
+    delay(10);
+  }
+  else if (di1 <= 50 && di2 <= 50 && di3 <= 50) {
+	tone(buz, tonA5, 70); //Tonausgabe
+  Serial.print("Alle 3 30 cm \n");
+  delay(200);
+  }
+  else if (di1 <= 30 && di3 <= 30){
+    tone(buz, tonD5, 70); //Tonausgabe
+    Serial.print("li re 30 cm \n");
+    delay(200);
+  }
+  else if (di2 <= 30 && di3 <= 30){
+    tone(buz, tonE5, 70); //Tonausgabe
+    Serial.print("mi re 30cm \n");
+    delay(200);
   }
   else if (di1 <= 30 && di2 <= 30){
-    tone(buz, tonF5, 70);
+    tone(buz, tonF5, 70); //Tonausgabe
     Serial.print("li mi 30cm \n");
+    delay(200);
   }
   else if (di1 <= 30){
-    tone(buz, tonC5, 70);
+    tone(buz, tonC5, 70); //Tonausgabe
     Serial.print("li 30cm \n");
+    delay(200);
   }
   else if (di2 <= 30){
-    tone(buz, tonG5, 70);
+    tone(buz, tonG5, 70); //Tonausgabe
     Serial.print("mi 30cm \n");
+    delay(200);
   }
   else if (di3 <= 30){
-    tone(buz, tonB5, 70);
+    tone(buz, tonB5, 70); //Tonausgabe
     Serial.print("re 30cm \n");
+    delay(200);
   }
-  else if (di1 <=100 && di2 <= 100 && di3 <= 100) {
-    tone(buz, tonA4, 70);
+  else if (di1 <=75 && di2 <= 75 && di3 <= 75) {
+    tone(buz, tonA5, 70); //Tonausgabe
     Serial.print("Alle 3 1m \n");
+    delay(700);
   }
-  else if (di1 <= 100 && di3 <= 100){
-    tone(buz, tonD4, 70);
+  else if (di1 <= 75 && di3 <= 75){
+    tone(buz, tonD5, 70); //Tonausgabe
     Serial.print("li re 1m \n");
+    delay(700);
   }
-  else if (di2 <= 100 && di3 <= 100){
-    tone(buz, tonE4, 70);
+  else if (di2 <= 75 && di3 <= 75){
+    tone(buz, tonE5, 70); //Tonausgabe
     Serial.print("mi re 1m \n");
+    delay(700);
   }
-  else if (di1 <= 100 && di2 <= 100){
-    tone(buz, tonF4, 70);
+  else if (di1 <= 75 && di2 <= 75){
+    tone(buz, tonF5, 70); //Tonausgabe
     Serial.print("li mi 1m \n");
+    delay(700);
   }
-  else if (di1 <= 100){
-    tone(buz, tonC4, 70);
+  else if (di1 <= 75){
+    tone(buz, tonC5, 70); //Tonausgabe
     Serial.print("li 1m \n");
+    delay(700);
   }
   else if (di2 <= 100){
-    tone(buz, tonG4, 70);
+    tone(buz, tonG5, 70); //Tonausgabe
     Serial.print("mi 1m \n");
+    delay(700);
   }
   else if (di3 <= 100){
-    tone(buz, tonB4, 70);
+    tone(buz, tonB5, 70); //Tonausgabe
     Serial.print("re 1m \n");
+    delay(700);
   }
   else {
   }
