@@ -102,7 +102,6 @@ void loop() {
   if (di1 <= 15 && di2 <= 15 && di3 <= 15) {
 	tone(buz, tonA5, 70); //Tonausgabe
   Serial.print("Alle 3 15cm \n");
-  //delay(10);
   }
   else if (di1 <= 15 && di3 <= 15){
     tone(buz, tonD5, 70); //Tonausgabe
@@ -111,27 +110,22 @@ void loop() {
   else if (di2 <= 15 && di3 <= 15){
     tone(buz, tonE5, 70); //Tonausgabe
     Serial.print("mi re 15cm \n");
-    //delay(10);
   }
   else if (di1 <= 15 && di2 <= 15){
     tone(buz, tonF5, 70); //Tonausgabe
     Serial.print("li mi 15cm \n");
-    //delay(10);
   }
   else if (di1 <= 15){
     tone(buz, tonC5, 70); //Tonausgabe
     Serial.print("li 15cm \n");
-    //delay(10);
   }
   else if (di2 <= 15){
     tone(buz, tonG5, 70); //Tonausgabe
     Serial.print("mi 15cm \n");
-    //delay(10);
   }
   else if (di3 <= 15){
     tone(buz, tonB5, 70); //Tonausgabe
     Serial.print("re 15cm \n");
-    //delay(10);
   }
   else if (di1 <= 50 && di2 <= 50 && di3 <= 50) {
 	tone(buz, tonA5, 70); //Tonausgabe
