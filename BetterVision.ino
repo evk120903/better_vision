@@ -58,6 +58,9 @@ void loop() {
   digitalWrite(tp1, LOW);
   duration1 = pulseIn(ep1, HIGH);
   di1 = duration1 * 0.034 / 2;
+  // Dauer zwischen Senden des Signals und dem Empfangen dieses (welches bereits "Beim Objekt war") wird aufgenommen,
+  // danach wird dieses in Distanz umgewandelt
+
   /*Serial.print("di 1: ");
   Serial.println(di1);*/
 
@@ -94,105 +97,105 @@ void loop() {
   Links
   Mitte
   Rechts
-  (Zuerst auf 30 cm geprüft, dann auf 75 cm)*/
+  (Zuerst auf 15 cm geprüft, dann auf 50, dann auf 150 cm)*/
 
   if (di1 <= 15 && di2 <= 15 && di3 <= 15) {
 	tone(buz, tonA5, 70); //Tonausgabe
-  Serial.print("Alle 3 30 cm \n");
+  Serial.print("Alle 3 15cm \n");
   //delay(10);
   }
   else if (di1 <= 15 && di3 <= 15){
     tone(buz, tonD5, 70); //Tonausgabe
-    Serial.print("li re 30 cm \n");
+    Serial.print("li re 15cm \n");
   }
   else if (di2 <= 15 && di3 <= 15){
     tone(buz, tonE5, 70); //Tonausgabe
-    Serial.print("mi re 30cm \n");
+    Serial.print("mi re 15cm \n");
     //delay(10);
   }
   else if (di1 <= 15 && di2 <= 15){
     tone(buz, tonF5, 70); //Tonausgabe
-    Serial.print("li mi 30cm \n");
+    Serial.print("li mi 15cm \n");
     //delay(10);
   }
   else if (di1 <= 15){
     tone(buz, tonC5, 70); //Tonausgabe
-    Serial.print("li 30cm \n");
+    Serial.print("li 15cm \n");
     //delay(10);
   }
   else if (di2 <= 15){
     tone(buz, tonG5, 70); //Tonausgabe
-    Serial.print("mi 30cm \n");
+    Serial.print("mi 15cm \n");
     //delay(10);
   }
   else if (di3 <= 15){
     tone(buz, tonB5, 70); //Tonausgabe
-    Serial.print("re 30cm \n");
+    Serial.print("re 15cm \n");
     //delay(10);
   }
   else if (di1 <= 50 && di2 <= 50 && di3 <= 50) {
 	tone(buz, tonA5, 70); //Tonausgabe
-  Serial.print("Alle 3 30 cm \n");
+  Serial.print("Alle 3 50 cm \n");
   delay(200);
   }
-  else if (di1 <= 30 && di3 <= 30){
+  else if (di1 <= 50 && di3 <= 50){
     tone(buz, tonD5, 70); //Tonausgabe
-    Serial.print("li re 30 cm \n");
+    Serial.print("li re 50 cm \n");
     delay(200);
   }
-  else if (di2 <= 30 && di3 <= 30){
+  else if (di2 <= 50 && di3 <= 50){
     tone(buz, tonE5, 70); //Tonausgabe
-    Serial.print("mi re 30cm \n");
+    Serial.print("mi re 50cm \n");
     delay(200);
   }
-  else if (di1 <= 30 && di2 <= 30){
+  else if (di1 <= 50 && di2 <= 50){
     tone(buz, tonF5, 70); //Tonausgabe
-    Serial.print("li mi 30cm \n");
+    Serial.print("li mi 50cm \n");
     delay(200);
   }
-  else if (di1 <= 30){
+  else if (di1 <= 50){
     tone(buz, tonC5, 70); //Tonausgabe
-    Serial.print("li 30cm \n");
+    Serial.print("li 50cm \n");
     delay(200);
   }
-  else if (di2 <= 30){
+  else if (di2 <= 50){
     tone(buz, tonG5, 70); //Tonausgabe
-    Serial.print("mi 30cm \n");
+    Serial.print("mi 50cm \n");
     delay(200);
   }
-  else if (di3 <= 30){
+  else if (di3 <= 50){
     tone(buz, tonB5, 70); //Tonausgabe
-    Serial.print("re 30cm \n");
+    Serial.print("re 50cm \n");
     delay(200);
   }
   else if (di1 <=150 && di2 <= 150 && di3 <= 150) {
     tone(buz, tonA5, 70); //Tonausgabe
-    Serial.print("Alle 3 1m \n");
+    Serial.print("Alle 3 1.5m \n");
     delay(450);
   }
   else if (di1 <= 150 && di3 <= 150){
     tone(buz, tonD5, 70); //Tonausgabe
-    Serial.print("li re 1m \n");
+    Serial.print("li re 1.5m \n");
     delay(450);
   }
   else if (di2 <= 150 && di3 <= 150){
     tone(buz, tonE5, 70); //Tonausgabe
-    Serial.print("mi re 1m \n");
+    Serial.print("mi re 1.5m \n");
     delay(450);
   }
   else if (di1 <= 150 && di2 <= 150){
     tone(buz, tonF5, 70); //Tonausgabe
-    Serial.print("li mi 1m \n");
+    Serial.print("li mi 1.5m \n");
     delay(450);
   }
   else if (di1 <= 150){
     tone(buz, tonC5, 70); //Tonausgabe
-    Serial.print("li 1m \n");
+    Serial.print("li 1.5m \n");
     delay(450);
   }
   else if (di2 <= 150){
     tone(buz, tonG5, 70); //Tonausgabe
-    Serial.print("mi 1m \n");
+    Serial.print("mi 1.5m \n");
     delay(450);
   }
   else if (di3 <= 150){
